@@ -1,0 +1,12 @@
+
+
+bool isPerfectSquare(int num){
+    int sqr_root;
+    sqr_root = sqrt(num);
+    if(sqr_root == sqrt(num)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}

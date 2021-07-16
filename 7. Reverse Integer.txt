@@ -1,0 +1,19 @@
+class Solution(object):
+    def reverse(self, x):
+        if(x>2147483646 or x<-2147483647) :
+            return 0
+        elif(x<0) :
+            temp = x * (-1)
+        else :
+            temp = x
+        rev = 0
+        while(temp > 0) :
+            rem = temp % 10
+            rev = (rev * 10) + rem
+            temp = temp / 10
+        if(rev>2147483646 or rev<-2147483647) :
+            return 0
+        elif(x<0) :
+            return -rev
+        else :
+            return rev

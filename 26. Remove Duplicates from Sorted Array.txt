@@ -1,0 +1,19 @@
+int removeDuplicates(int* nums, int numsSize){
+    int count_1, count_2;
+    count_1 = 0;
+    count_2 = 1;
+    if(numsSize == 0){
+        return 0;
+    }
+    while(count_1<numsSize-1 && count_2<numsSize){
+        if(nums[count_1] != nums[count_2]){
+            count_1 += 1;
+            nums[count_1] = nums[count_2];
+        }
+        count_2 += 1;
+    }
+    for(count_2=count_1+1;count_2<numsSize;count_2++){
+        nums[count_2] = '_';
+    }
+    return count_1+1;
+}

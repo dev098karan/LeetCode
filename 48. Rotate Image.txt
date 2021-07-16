@@ -1,0 +1,22 @@
+class Solution {
+    public void rotate(int[][] matrix) {
+        int count_1, count_2, count_3, count_4;
+        count_1 = 0;
+        count_2 = matrix.length - 1;
+        while((count_2 - count_1) >= 0){
+            count_3 = count_1;
+            count_4 = count_2;
+            while(count_3 < count_2){
+                matrix[count_1][count_3] = matrix[count_1][count_3] + matrix[count_3][count_2] + matrix[count_4][count_1] + matrix[count_2][count_4];
+                matrix[count_3][count_2] = matrix[count_1][count_3] - matrix[count_3][count_2] - matrix[count_4][count_1] - matrix[count_2][count_4];
+                matrix[count_2][count_4] = matrix[count_1][count_3] - matrix[count_3][count_2] - matrix[count_4][count_1] - matrix[count_2][count_4];
+                matrix[count_4][count_1] = matrix[count_1][count_3] - matrix[count_3][count_2] - matrix[count_4][count_1] - matrix[count_2][count_4];
+                matrix[count_1][count_3] = matrix[count_1][count_3] - matrix[count_3][count_2] - matrix[count_4][count_1] - matrix[count_2][count_4];
+                count_3 += 1;
+                count_4 -= 1;
+            }
+            count_1 += 1;
+            count_2 -= 1;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+
+
+bool isPowerOfFour(int n){
+    double power;
+    power = log(n) / log(4);
+    if(power == (int)power){
+        return true;
+    }
+    else{
+        return false;
+    }
+}

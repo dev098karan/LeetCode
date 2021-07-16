@@ -1,0 +1,10 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        for count_1 in range(0,len(nums)-1) :
+            for count_2 in range(count_1+1, len(nums)) :
+                if((nums[count_1] + nums[count_2]) == target) :
+                    result = [count_1, count_2]
+                    break
+            if((nums[count_1] + nums[count_2]) == target) :
+                    break
+        return result

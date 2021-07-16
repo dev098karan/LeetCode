@@ -1,0 +1,17 @@
+
+
+int removeElement(int* nums, int numsSize, int val){
+    int count_1, count_2;
+    count_1 = count_2 = 0;
+    while(count_1 < numsSize){
+        if(nums[count_1] != val){
+            nums[count_2] = nums[count_1];
+            count_2 += 1;
+        }
+        count_1 += 1;
+    }
+    for(count_1=count_2;count_1<numsSize;count_1++){
+        nums[count_1] = '_';
+    }
+    return count_2;
+}

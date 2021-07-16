@@ -1,0 +1,19 @@
+
+
+int mySqrt(int x){
+    long int count_1;
+    for(count_1=1;count_1<=x/2;count_1++){
+        if((count_1 * count_1) >= x){
+            break;
+        }
+        else{
+            continue;
+        }
+    }
+    if((count_1 * count_1) == x){
+        return count_1;
+    }
+    else{
+        return count_1 - 1;
+    }
+}

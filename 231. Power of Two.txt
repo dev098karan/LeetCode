@@ -1,0 +1,17 @@
+
+
+bool isPowerOfTwo(int n){
+    int power;
+    if(n == 0){
+        return false;
+    }
+    else{
+        power = log(n) / log(2);
+        if(pow(2,power) == n){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
