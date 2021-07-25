@@ -1,0 +1,25 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if(needle.isEmpty()){
+            return 0;
+        }
+        int length_haystack, length_needle;
+        length_haystack = haystack.length();
+        length_needle = needle.length();
+        if(length_haystack < length_needle){
+            return -1;
+        }
+        int count_1, count_2;
+        for(count_1=0;count_1<=length_haystack - length_needle;count_1++){
+            for(count_2=0;count_2<length_needle;count_2++){
+                if(haystack.charAt(count_1 + count_2) != needle.charAt(count_2)){
+                    break;
+                }
+            }
+            if(count_2 == length_needle){
+                return count_1;
+            }
+        }
+        return -1;
+    }
+}
