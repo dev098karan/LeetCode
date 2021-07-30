@@ -1,0 +1,22 @@
+class Solution {
+    public int islandPerimeter(int[][] grid) {
+        int count_1, count_2, row, col, result;
+        row = grid.length;
+        col = grid[0].length;
+        result = 0;
+        for(count_1=0;count_1<row;count_1++){
+            for(count_2=0;count_2<col;count_2++){
+                if(grid[count_1][count_2] == 1){
+                    result += 4;
+                    if((count_1 > 0) && (grid[count_1 - 1][count_2] == 1)){
+                        result -= 2;
+                    }
+                    if((count_2 > 0) && (grid[count_1][count_2 - 1] == 1)){
+                        result -= 2;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+}
