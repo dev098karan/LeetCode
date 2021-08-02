@@ -1,0 +1,19 @@
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int count, length, right_product;
+        length = nums.length;
+        int []result = new int[length];
+        result[0] = nums[0];
+        for(count=1;count<length;count++){
+            result[count] = nums[count] * result[count - 1];
+        }
+        right_product = nums[length - 1];
+        result[length - 1] = result[length - 2];
+        for(count=length-2;count>0;count--){
+            result[count] = result[count - 1] * right_product;
+            right_product = right_product * nums[count];
+        }
+        result[0] = right_product;
+        return result;
+    }
+}
