@@ -1,0 +1,29 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int count, length;
+        length = nums.length;
+        int []result = new int[2];
+        result[0] = -1;
+        result[1] = -1;
+        count = 0;
+        while(count < length){
+            if(nums[count] == target){
+                result[0] = count;
+                break;
+            }
+            count += 1;
+        }
+        while(count < length){
+            if(nums[count] != target){
+                result[1] = count - 1;
+                break;
+            }
+            else if(count == (length - 1)){
+                result[1] = count;
+                break;
+            }
+            count += 1;
+        }
+        return result;
+    }
+}
