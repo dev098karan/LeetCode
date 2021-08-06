@@ -1,0 +1,35 @@
+class Solution {
+    public boolean checkRecord(String s) {
+        int absent, late, length, count;
+        length = s.length();
+        count = 0;
+        absent = 0;
+        late = 0;
+        while(count < length){
+            if(absent > 1){
+                break;
+            }
+            if(late > 2){
+                break;
+            }
+            if(s.charAt(count) == 'L'){
+                if((count == 0) || (s.charAt(count - 1) != 'L')){
+                    late = 1;
+                }
+                else{
+                    late += 1;
+                }
+            }
+            else if(s.charAt(count) == 'A'){
+                absent += 1;
+            }
+            count += 1;
+        }
+        if((absent > 1) || (late > 2)){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+}
