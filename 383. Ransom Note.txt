@@ -1,0 +1,22 @@
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        mag = []
+        i = 0
+        while(i < len(magazine)) :
+            mag.append(magazine[i])
+            i += 1
+        j = 0
+        for r in ransomNote :
+            i = j
+            while(i < len(magazine)) :
+                if(r == mag[i]) :
+                    break
+                i += 1
+            if(i == len(magazine)) :
+                return False
+            else :
+                mag[i] = mag[j]
+                mag[j] = None
+                j += 1
+        return True
+                
