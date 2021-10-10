@@ -1,0 +1,19 @@
+class Solution(object):
+    def rangeBitwiseAnd(self, left, right):
+        result = 0
+        temp = 1
+        if (left == right) :
+            return left
+        while temp != 0 :
+            for i in range(0, 32) :
+                if(left < (2 ** i)) :
+                    break
+            if (i == 0) or (right >= (2 ** i)) :
+                temp = 0
+            else :
+                i -= 1
+                temp = 2 ** i 
+            left -= temp
+            right -=  temp
+            result += temp
+        return result
